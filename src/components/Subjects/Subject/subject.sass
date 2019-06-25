@@ -1,0 +1,95 @@
+.subject
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    width: calc((100% - 120px) / 3)
+
+    border-radius: 8px
+    background-color: #fff
+    margin: 20px
+
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.3)
+    cursor: pointer
+    transition: all .3s ease
+
+    @media screen and (max-width: 1024px)
+        width: calc((100% - 80px) / 2)
+
+    @media screen and (max-width: 650px)
+        width: 100%
+        margin: 20px 0
+
+    
+    &:hover
+        transform: scale(1.01) translateY(-10px)
+        box-shadow: 10px 10px 20px 1px rgba(0,0,0,.3)
+
+    &__name
+        font-size: 20px
+        color: #222
+        font-weight: bold
+        text-align: center
+        margin: 20px 0
+
+    .teacher
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 20px 0
+
+        width: 100%
+
+        border-bottom: 1px solid rgba($color: gray, $alpha: .5)
+        border-top: 1px solid rgba($color: gray, $alpha: .5)
+
+        &__heading
+            margin: 0
+            font-weight: normal
+            margin-bottom: 10px
+        &__photo
+            margin-bottom: 10px
+            height: 100px
+            width: 100px
+            margin-bottom: 0
+
+            img
+                height: 100px
+                width: 100px
+        &__name
+            margin-bottom: 0
+            font-weight: bold
+
+    .info
+        display: flex
+        flex-wrap: wrap
+
+        width: 100%
+        margin: -5px 0
+        padding: 20px 30px
+
+        &__item
+            flex-direction: column
+            display: flex
+
+            width: 50%
+            margin: 5px 0
+
+            .data
+                font-size: 14px 
+                width: 100%
+
+            .value
+                font-weight: bold
+                color: #003ADC
+                font-size: 18px
+                width: 100%
+
+            &--average-ball
+            &--missed
+                &-labs
+                &-lectures
+            &--visited
+                &-labs
+                &-lectures
+    

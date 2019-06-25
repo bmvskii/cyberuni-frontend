@@ -1,0 +1,76 @@
+.todo-list-item
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.3)
+
+    padding: 20px
+    margin-bottom: 10px
+    border-radius: 8px
+    
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    background: #f6f4f5
+
+    @media screen and (max-width: 650px)
+        flex-direction: row
+
+    &__name,
+    &__description, 
+    &__expiration-date
+        padding-bottom: 10px
+        color: #222830
+        font-weight: bold
+
+    &__content
+        display: flex
+        flex-direction: column
+
+        @media screen and (max-width: 650px)
+            width: 60%
+
+    &__buttons
+        display: flex
+        justify-content: center
+
+        width: 100%
+        margin-top: 10px
+        margin-right: -10px
+
+        @media screen and (max-width: 650px)
+            width: 40%
+            flex-direction: column
+            margin-right: -10px
+            margin: -5px
+
+    &__button
+        color: #fff
+        background-color: none
+        border: none
+        width: 100%
+        font-weight: bold
+
+        cursor: pointer
+
+        padding: 10px 0
+        transition: all .3s ease
+
+        margin-right: 10px
+        border: 2px solid transparent
+
+        @media screen and (max-width: 650px)
+            margin-right: 0
+            margin: 5px 0
+
+        &--delete
+            background-color: #e7140d
+            &:hover
+                border-color: #e7140d
+                color: #e7140d
+                background-color: unset
+
+        &--completed  
+            background-color: #f4841a
+            &:hover
+                border-color: #f4841a
+                color: #f4841a
+                background-color: unset

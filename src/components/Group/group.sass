@@ -1,0 +1,161 @@
+.group
+    display: flex
+    flex-direction: column
+
+    &__heading
+
+    &__head-person
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 20px
+
+        text-decoration: none
+        width: 100%
+        
+        &-wrapper
+            display: inline-flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            width: calc((100% - 90px) / 3)
+
+            margin: 0 15px 15px
+
+            border-radius: 8px
+            background-color: #f6f4f5
+            box-shadow: 0 0 10px 1px rgba(0,0,0,.3)
+            
+            cursor: pointer
+            transition: all .3s ease
+
+            @media screen and (max-width: 650px)
+                width: 100%
+                margin: 15px 0
+            
+            &:hover
+                transform: scale(1.01) translateY(-10px)
+                box-shadow: 10px 10px 20px 1px rgba(0,0,0,.3)
+
+        &s
+            display: flex
+            flex-wrap: wrap
+            align-items: flex-start
+            
+            margin: 0 -20px
+
+            @media screen and (max-width: 650px)
+                margin: -15px 0
+        
+        &-average
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            color: #222
+            font-weight: bold
+            font-size: 20px
+
+            margin: 0
+
+            .average-ball
+                color: #003ADC
+                font-size: 30px
+
+        &-title
+            text-align: center
+            width: 100%
+            font-weight: bold
+            font-size: 25px
+            margin: 0
+            padding: 20px
+            border-bottom: 1px solid gray
+
+        &-photo
+            display: flex
+            justify-content: center
+            align-items: center
+
+            width: 120px
+            height: 120px
+            border-radius: 50%
+
+            overflow: hidden
+
+            @media screen and (max-width: 1024px)
+                width: 100px
+                height: 100px
+
+            &-emojii
+                font-size: 90px
+        
+        &-email,
+        &-name
+            margin: 5px 0
+            color: #222
+        
+        &-email
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            .data
+                font-weight: bold
+                color: #003ADC
+        &-name
+            margin-top: 10px
+            font-weight: bold
+            font-size: 20px
+
+    &__students
+        display: flex
+        flex-wrap: wrap
+        
+        margin: -20px -15px 0
+        padding: 20px 30px 40px
+        width: 100%
+
+        @media screen and (max-width: 650px)
+            justify-content: center
+            margin: -15px 0
+
+        &-heading
+            padding: 20px 30px
+            border-bottom: 1px solid gray
+            width: 100%
+
+        &-wrapper
+            text-align: center
+            background-color: #fff
+            margin-bottom: 40px
+            border-radius: 8px
+
+            box-shadow: 0 0 20px 1px rgba(0,0,0,.1)
+
+    &__common-info
+        background-color: #fff
+        padding: 20px 30px
+        border-radius: 8px
+
+        box-shadow: 0 0 20px 1px rgba(0,0,0,.1)
+
+        &-title
+            margin: 0
+            margin-bottom: 20px
+            display: flex
+            align-items: center
+
+            @media screen and (max-width: 650px)
+                flex-direction: column
+                margin-bottom: 20px
+
+        .title
+            font-size: 50px
+            color: #003ADC
+            margin-left: 10px
+
+            @media screen and (max-width: 1024px)
+                font-size: 40px
+            
+            @media screen and (max-width: 650px)
+                margin-left: 0

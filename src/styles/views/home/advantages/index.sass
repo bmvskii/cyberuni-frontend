@@ -1,0 +1,108 @@
+$adv-pos-bottom: 70px
+$padding: 65px
+$adv-padding: 60px
+$adv-mobile-width: 175px
+
+.advantages
+    display: flex
+    justify-content: space-between
+
+    width: 100%
+
+    @media screen and (max-width: $small)
+        flex-direction: column-reverse
+
+    &__wrapper
+        display: flex
+        align-items: flex-end
+
+        position: relative
+        bottom: $adv-pos-bottom
+
+        padding: 0 $padding
+
+        @media screen and (max-width: $medium)
+            padding: 0 15px
+        
+        @media screen and (max-width: $small)
+            flex-direction: column-reverse
+            left: 30px
+            bottom: 40px
+    
+    &__heading
+        background-color: $black 
+        padding: 0 $padding      
+
+        @media screen and (max-width: $small)
+            padding: 0 $padding / 2
+   
+    &__right
+        width: calc(100% / 3 * 2)
+        background-color: $black
+        padding: $padding 0
+
+        @media screen and (max-width: $small)
+            width: 100%
+            padding-top: $padding / 2
+            padding-bottom: 0
+
+    &__left
+        width: calc(100% / 3)
+        padding-bottom: $padding
+
+        @media screen and (max-width: $small)
+            width: 100%
+            background-color: $black
+            color: $white
+            padding-bottom: $padding / 2
+
+            .advantage
+                &__heading
+                    color: $white
+                &__number
+                    border-bottom: 2px solid rgba($color: $gray, $alpha: .3)
+
+.advantage
+    width: 100%
+    padding: 0 $adv-padding
+
+    @media screen and (max-width: $medium)
+        padding: 0 $adv-padding / 2
+    
+    @media screen and (max-width: $small)
+        width: $adv-mobile-width
+        box-sizing: content-box
+
+    &__number
+        font-weight: bold
+        font-size: $fs48
+
+        padding-bottom: $adv-padding / 2
+        border-bottom: 2px solid rgba($color: $black, $alpha: .3)
+    
+        @media screen and (max-width: $small)
+            font-size: 0
+
+            &:before
+                display: block
+                content: attr(data-number)
+
+                font-size: $fs48
+                color: $white
+                font-weight: bold
+
+    &__heading
+        font-weight: bold
+        margin: $adv-padding / 4 0
+
+    &__descr
+
+    &--white
+        .advantage
+            &__heading
+                color: $white
+            &__descr
+                color: $white
+            &__number
+                color: $white
+                border-color: rgba($color: $gray, $alpha: .3)

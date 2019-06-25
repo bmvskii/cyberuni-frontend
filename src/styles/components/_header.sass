@@ -1,0 +1,54 @@
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    
+    position: relative
+
+    max-width: 1200px
+    width: 100%
+
+    margin: 0 auto
+    padding: 30px 15px
+    
+    color: white
+
+    flex-grow: 0 !important
+    transition: $transition
+
+    &__wrapper
+        display: flex
+        background-color: $white
+        height: 96px
+        
+        &--sidebar-opened
+            
+            .header
+                width: calc(100% - 256px)
+                transform: translateX(256px)
+
+                margin: 0
+
+            ~ .content,
+            ~ .footer__wrapper
+                transform: translate(256px)
+                .footer,
+                .container
+                    margin: 0
+
+
+        &--authorized
+            background-color: $black
+
+    .buttons
+        display: flex
+    
+    .button
+        &:not(:last-child)
+            margin-right: 20px
+
+        @media screen and (max-width: $small)
+            padding: 10px 5px
+
+            &:not(:last-child)
+                margin-right: 10px

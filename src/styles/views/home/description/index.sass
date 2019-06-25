@@ -1,0 +1,66 @@
+$padding: 65px
+$padding-top: 80px
+
+.description
+    display: flex
+    justify-content: space-between
+    
+    background-color: $blue
+    color: $white
+
+    padding: $padding $padding $padding * 2
+
+    @media screen and (max-width: $small)
+        flex-direction: column
+
+    @media screen and (max-width: $small)
+        padding: 30px 30px 60px
+
+    &__wrapper
+        padding: $padding-top $padding 0
+
+        @media screen and (max-width: $medium)
+            padding: $padding-top 15px 0
+
+        @media screen and (max-width: $small)
+            padding: 30px 15px 0
+
+    &__para
+        margin-bottom: 30px
+
+        @media screen and (max-width: $small)
+            &:not(:last-of-type)
+                margin-bottom: 30px
+
+    &__para,
+    &__heading
+        width: 50%
+        
+        @media screen and (max-width: $medium)
+            width: 100%
+
+        @media screen and (max-width: $small)
+            text-align: center
+
+    &__right
+        width: calc((100% / 3) * 2)
+
+        @media screen and (max-width: $medium)
+            width: 50%
+        
+        @media screen and (max-width: $small)
+            width: 100%
+
+            .button 
+                display: none
+
+    &__left
+        width: calc(100% / 3)
+
+        @media screen and (max-width: $medium)
+            width: 45%
+
+        @media screen and (max-width: $small)
+            width: 100%
+        
+        

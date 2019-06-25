@@ -1,0 +1,65 @@
+.user
+    display: flex
+    flex-direction: column
+
+    padding: 0 40px
+    font-weight: bold
+
+    &__first_name,
+    &__last_name,
+    &__email,
+    &__degree,
+    &__age
+        margin-bottom: 10px
+        width: 100%
+
+    &__left,
+    &__right
+        width: 50%
+
+    &__left
+        display: flex
+        flex-direction: column
+    
+    &__right
+        display: flex
+        flex-direction: column
+
+        align-items: center
+        justify-content: center
+    
+    &__content
+        display: flex
+
+        padding: 20px 30px
+        background-color: #fff
+        border-radius: 8px
+        box-shadow: 0 0 10px 1px rgba(0,0,0,.3)
+
+    &__value
+
+    &__data
+        min-width: 100px
+        color: blue
+        font-weight: normal
+
+    &__photo
+        width: 200px
+        height: 200px
+
+    .file
+        &Container
+            background-color: #f6f4f5
+            padding: 20px
+
+            .chooseFileButton 
+                background-color: #003ADC
+                border-radius: 0
+                transition: all .3s ease
+                border: 2px solid transparent
+                font-weight: bold
+
+                &:hover
+                    border-color: #003ADC
+                    color: #003ADC
+                    background-color: unset

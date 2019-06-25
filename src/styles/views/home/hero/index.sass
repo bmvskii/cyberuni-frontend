@@ -1,0 +1,63 @@
+$hero-pl: 96px
+$text-mb: 30px
+$heading-width: 70%
+$para-width: 40%
+
+.hero
+    display: flex
+    justify-content: center
+    flex-direction: column
+
+    height: 100%
+
+    color: $white
+    background: url('../assets/images/hero-bg.jpg') no-repeat center center
+    background-size: calc(100% - 30px) 100%
+
+    padding-left: $hero-pl
+
+    @media screen and (max-width: $medium)
+        padding-left: $hero-pl / 2    
+    
+    @media screen and (max-width: $small)
+        align-items: center
+        padding: 50px 30px
+    
+    &__wrapper
+        height: 100vh
+        max-height: 700px
+
+        margin-top: -30px
+
+        @media screen and (max-width: $small)
+            height: auto
+
+    &__heading
+        font-size: $fs64
+        font-weight: bold
+        color: $white
+        line-height: 1
+
+        width: $heading-width
+        margin-bottom: $text-mb
+
+        &:before
+            display: none
+
+        .blue
+            margin-left: 20px
+
+        @media screen and (max-width: $small)
+            font-size: $fs34
+            width: 100%
+            text-align: center
+
+    &__para
+        font-size: $fs18
+
+        width: $para-width
+        margin-bottom: $text-mb
+
+        @media screen and (max-width: $small)
+            text-align: center
+            width: 100%

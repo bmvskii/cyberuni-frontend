@@ -1,0 +1,73 @@
+$button-width: 220px
+$padding-tb: 12px
+$padding-lr: 15px
+    
+.button
+    display: flex
+    justify-content: center
+    align-items: center
+    
+    padding: $padding-tb 0
+    
+    text-transform: uppercase
+    font-size: $fs14
+    font-weight: bold
+
+    letter-spacing: 0.02em
+    cursor: pointer
+
+    border: 2px solid transparent
+    background: unset
+
+    transition: $transition
+
+    text-decoration: none
+
+    &--menu
+        display: flex
+        align-items: center
+        
+        color: $white
+        margin-right: 0
+        outline: none
+        
+        svg
+            margin-right: 15px
+        
+        &:hover
+            color: $blue
+            svg
+                fill: $blue
+    &--hidden
+        display: none
+
+    &__default
+        color: $black
+        padding: $padding-tb $padding-lr
+        
+        &:hover
+            border-color: $black
+    
+    &__white-blue
+        color: $white
+        background-color: $blue
+        width: $button-width
+
+        &:hover
+            background: rgba($color: $blue, $alpha: .5)
+    
+    &__white
+        padding: $padding-tb $padding-lr
+        color: $white
+        &:hover
+            border-color: $white
+
+    &__blue-white
+        background-color: $white
+        color: $blue
+        width: $button-width
+
+        &:hover
+            color: $white
+            border-color: $white
+            background: unset

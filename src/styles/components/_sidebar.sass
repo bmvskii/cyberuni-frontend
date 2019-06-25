@@ -1,0 +1,83 @@
+.sidebar
+    position: fixed
+    top: 0
+    bottom: 0
+
+    z-index: 10
+    width: 256px
+    height: 100vh
+
+    background: $white
+
+    transform: translateX(-256px)
+    transition: $transition
+
+    &--active
+        transform: none
+    
+    &--active > &__user-info
+        box-shadow: 0 0 10px 1px rgba(0,0,0, 0.3)
+
+    &__user-info
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        background-color: $blue
+        color: $white
+
+        font-weight: bold
+
+        padding: 20px
+        height: 96px
+
+        box-shadow:  0 10px 1px rgba(0,0,0, 0.3)
+
+        .user-info
+            &__email
+                font-weight: normal
+
+    &__list
+        list-style: none
+        margin: 0
+        padding: 20px
+        padding-right: 0
+        height: calc(100vh - 96px)
+
+        box-shadow: 0 0 10px 1px rgba(0,0,0, 0.3)
+
+        &-item
+            padding: 10px 0
+            cursor: pointer
+            transition: $transition
+            border-right: 3px solid transparent
+
+            &:hover
+                border-color: $blue
+                .sidebar
+                    &__emojii
+                        transform: scale(1.01)
+                        opacity: 1
+
+                    &__link
+                        color: $blue
+
+        @media screen and (max-width: 1024px)
+            box-shadow: none
+            border-right: 1px solid rgba($color: #f6f4f5, $alpha: 1)
+
+    &__link
+        transition: $transition
+        text-decoration: none
+        color: $black
+        font-size: 1rem
+
+    &__emojii
+        opacity: .2
+        transition: $transition
+
+        margin-right: 10px
+
+        width: 30px
+
+        

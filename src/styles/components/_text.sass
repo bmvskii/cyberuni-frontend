@@ -1,0 +1,37 @@
+.para
+    font-size: $fs18
+    color: $white
+
+.h2
+    font-size: $fs48
+    color: $white
+    font-weight: bold
+
+h1
+    display: inline-block !important
+    position: relative
+    z-index: 2
+
+    align-self: flex-start
+
+    &:before
+        display: block
+        content: ""
+
+        height: 20px
+        background-color: rgba($color: #003ADC, $alpha: .5)
+        width: auto
+
+        position: absolute
+        bottom: -5px
+        left: -10%
+        right: -10%
+        z-index: -1
+
+        transform: skewX(-30deg)
+
+    @media screen and (max-width: $medium)
+        font-size: $fs40
+
+    @media screen and (max-width: $small)
+        font-size: $fs26

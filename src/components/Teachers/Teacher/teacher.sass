@@ -1,0 +1,58 @@
+.teacher
+    &-card
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        padding: 20px 30px
+
+        width: calc((100% - 120px) / 4)
+
+
+        background-color: #fff
+
+        margin: 15px
+        border-radius: 8px
+
+        box-shadow: 0 0 10px 1px rgba(0,0,0,.3)
+        cursor: pointer
+        transition: all .3s ease
+        
+        &:hover
+            transform: scale(1.01) translateY(-10px)
+            box-shadow: 10px 10px 20px 1px rgba(0,0,0,.3)
+
+        @media screen and (max-width: 1024px)
+            width: calc((100% - 90px) / 3)
+
+        @media screen and (max-width: 1024px)
+            width: calc((100% - 60px) / 2)
+        
+        @media screen and (max-width: 650px)
+            width: calc((100% - 30px))
+
+    &__photo
+        margin-bottom: 15px
+
+        width: 140px
+        height: 140px
+        border-radius: 50%
+
+        overflow: hidden
+
+        box-shadow: 0 0 5px 1px rgba(0,0,0,.1)
+
+    &__name
+        color: bold
+
+        font-size: 20px
+        margin-bottom: 15px
+        text-align: center
+
+    &__email
+        color: rgba($color: #003ADC, $alpha: .6)
+        margin-bottom: 15px
+        text-align: center
+
+   
