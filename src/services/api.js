@@ -23,7 +23,8 @@ export default class Api {
             console.log(e)
         }
     }
-
+    //method
+    
     getTeacherById = async (id) => {
         try {
             const { data: teacher } = await axios.get(`/teachers/${id}`);
