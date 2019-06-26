@@ -9,6 +9,8 @@
     "axios-token-interceptor": "^0.1.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.0.0-alpha.34",
+    "global": "^4.4.0",
+    "heroku": "^7.25.0",
     "lodash": "^4.17.11",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",

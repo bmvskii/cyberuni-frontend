@@ -12,7 +12,7 @@ axios.interceptors.request.use(tokenProvider({
 export default class Api {
 
     constructor() {
-        this.url = 'http://localhost:3000'
+        this.url = 'https://cyberuni.herokuapp.com'
     }
 
     getAllTeachers = async () => {
