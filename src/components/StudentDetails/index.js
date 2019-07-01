@@ -22,6 +22,7 @@ const StudentDetails = ({ info }) => {
     let averageMark = 0;
     let totalMarksAmount = 0;
 
+    //Calculate an average mark of a student
     learning_subjects.map(subj => {
         const sum = subj.marks.reduce((total, currVal) => total + currVal);
 

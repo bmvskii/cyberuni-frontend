@@ -4,7 +4,7 @@ import { fetchMyInfo } from "../user";
 
 export const fetchMyGroup = () => async (dispatch) => {
     dispatch({ type: FETCH_MY_GROUP_INFO_START });
-    
+
     try {
         const { group: id } = await dispatch(fetchMyInfo());
         const group = await api.getGroupById(id);

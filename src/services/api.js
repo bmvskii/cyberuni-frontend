@@ -3,32 +3,34 @@ import tokenProvider from 'axios-token-interceptor';
 import cookie from 'react-cookies';
 import { ACCESS_TOKEN_FIELD } from '../config';
 import Axios from 'axios';
+import paths from './apiPaths';
 
 axios.interceptors.request.use(tokenProvider({
-    getToken: () => cookie.load('access_token')
+    getToken: () => cookie.load(ACCESS_TOKEN_FIELD)
 }));
 
 
 export default class Api {
 
     constructor() {
-        this.url = 'https://cyberuni.herokuapp.com'
+        this.url = 'http://localhost:3000';
+        // this.url = 'https://cyberuni.herokuapp.com'
     }
 
     getAllTeachers = async () => {
         try {
-            const { data: teachers } = await axios.get(`/teachers`);
-            return teachers;
+            
+            const res = await axios.get(path.teachers);
+            return res && res.data;
         } catch (e) {
             console.log(e)
         }
     }
-    //method
-    
+
     getTeacherById = async (id) => {
         try {
-            const { data: teacher } = await axios.get(`/teachers/${id}`);
-            return teacher;
+            const res = await axios.get(`${path.teachers}/${id}`);
+            return res && res.data;
         } catch (e) {
             console.log(e)
         }
@@ -36,8 +38,8 @@ export default class Api {
 
     getAllStudents = async () => {
         try {
-            const { data: students } = await axios.get(`/students`);
-            return students;
+            const res = await axios.get(path.students);
+            return res && res.data;
         } catch (e) {
             console.log(e)
         }
@@ -45,8 +47,8 @@ export default class Api {
 
     getAllSubjects = async () => {
         try {
-            const { data : subjects } = await axios.get(`/subjects`);
-            return subjects;
+            const res = await axios.get(path.subjects);
+            return res && res.data;
         } catch (e) {
             console.log(e)
         }
@@ -54,15 +56,15 @@ export default class Api {
 
     getMySubjects = async () => {
         try {
-            const { data } = await axios.get(`/me/subjects`);
-            return data;
+            return res && res.data;
+            const res = await axios.get(path.mySubjects);
         } catch (e) {
             console.log(e)
         }
     };
 
     signUp = async (...data) => {
-        const result = await axios.post('/students', JSON.stringify(...data));
+        const result = await axios.post(path.students, JSON.stringify(...data));
         return result;
     }
 
@@ -83,7 +85,7 @@ export default class Api {
                 }
             );
 
-            const { isAxiosError } = await axios.post('/login', { email, password });
+            const { isAxiosError } = await axios.post(path.logIn, { email, password });
             
             if (isAxiosError) {
                 return false;
@@ -106,7 +108,7 @@ export default class Api {
                 (error) => Promise.reject(error)
             );
 
-            await axios.post('/logout');
+            await axios.post(path.logOut);
             axios.interceptors.response.eject(logOutInterceptor);
         } catch (e) {
             console.log(e);
@@ -115,8 +117,8 @@ export default class Api {
 
     getInfoAboutMe = async () => {
         try {
-            const { data: info } = await axios.get('/me');
-            return info;
+            const res = await axios.get(path.myInfo);
+            return res && res.data;
         } catch (e) {
             console.log(e);
         }
@@ -124,8 +126,8 @@ export default class Api {
 
     getMyGroup = async () => {
         try {
-            const { data: info } = await axios.get('/me/group');
-            return info;
+            const res = await axios.get(path.myGroup);
+            return res && res.data;
         } catch (e) {
             console.log(e);
         }
@@ -133,8 +135,8 @@ export default class Api {
 
     getMySemester = async () => {
         try {
-            const { data: semester } = await axios.get('/me/semester');
-            return semester;
+            const res = await axios.get(path.mySemester);
+            return res && res.data;
         } catch (e) {
             console.log(e);
         }
@@ -142,8 +144,8 @@ export default class Api {
 
     getMyTasks = async () => {
         try {
-            const { data: tasks } = await axios.get('/me/tasks');
-            return tasks;
+            const res = await axios.get(path.myTasks);
+            return res && res.data;
         } catch (e) {
             console.log(e);
         }
@@ -151,7 +153,7 @@ export default class Api {
 
     createTask = async (...data) => {
         try {
-            await axios.post('/tasks', JSON.stringify(...data));
+            await axios.post(path.tasks, JSON.stringify(...data));
         } catch (e) {
             console.log(e);
         }
@@ -159,8 +161,8 @@ export default class Api {
 
     getMyTeachers = async () => {
         try {
-            const { data } = await axios.get(`/me/teachers`);
-            return data;
+            const res = await axios.get(path.myTeachers);
+            return res && res.data;
         } catch (e) {
             console.log(e)
         }
@@ -168,7 +170,7 @@ export default class Api {
 
     deleteTaskDeadline = async (id) => {
         try {
-            await axios.patch(`/tasks/${id}`, { expirationDate: null });
+            await axios.patch(`${path.teachers}/${id}`, { expirationDate: null });
         } catch (e) {
             console.log(e);
         }
@@ -176,7 +178,7 @@ export default class Api {
 
     deleteTask = async (id) => {
         try {
-            await axios.delete(`/tasks/${id}`);
+            await axios.delete(`${path.teachers}/${id}`);
         } catch (e) {
             console.log(e);
         }
@@ -184,7 +186,7 @@ export default class Api {
 
     toggleTaskCompletness = async (id, completed) => {
         try {
-            await axios.patch(`/tasks/${id}`, {
+            await axios.patch(`${path.teachers}/${id}`, {
                 completed: completed === 'false' ? true : false
             });
 
@@ -195,7 +197,7 @@ export default class Api {
 
     getGroupById = async (id) => {
         try {
-            const group = await axios.get(`/groups/${id}`);
+            const group = await axios.get(`${path.groups}/${id}`);
             return group;
         } catch (e) {
             console.log(e);

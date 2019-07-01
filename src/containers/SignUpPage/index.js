@@ -80,10 +80,10 @@ class SignUpPage extends Component {
             last_name,
             email
         } = this.state;
-
+        
+        debugger;
         const { history } = this.props;
         const res = await api.signUp({ first_name, last_name, password, email });
-
         if (res.status === 201) {
             history.push('/signup-ok');
         }

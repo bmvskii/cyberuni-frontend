@@ -13,7 +13,7 @@ const Profile = ({ data, photo, onPhotoUpdateHandler }) => {
     } = data;
 
     const userPhoto = photo ?
-        <img src={photo} alt={`${last_name} ${first_name}`}className="student__photo-inner" /> :
+        <img src={photo} alt={`${last_name} ${first_name}`} className="student__photo-inner" /> :
         <Emoji text={'👤'} className="student__photo-emojii" />;
 
     return (
@@ -21,21 +21,9 @@ const Profile = ({ data, photo, onPhotoUpdateHandler }) => {
             <h1 className="user__heading h1">Мои данные</h1>
             <div className="user__content">
                 <div className="user__left">
-
-                    <div className="user__first_name">
-                        <span className="user__data">Имя : </span>
-                        <span className="user__value">{first_name}</span>
-                    </div>
-                    <div className="user__last_name">
-                        <span className="user__data">Фамилия : </span>
-                        <span className="user__value">{last_name}</span>
-                    </div>
-
-                    <div className="user__email">
-                        <span className="user__data">Електронная почта : </span>
-                        <span className="user__value">{email}</span>
-                    </div>
-
+                    <DataField fClass={'user__first_name'} data={"Имя :"} value={first_name} />
+                    <DataField fClass={'user__last_name'} data={"Фамилия :"} value={last_name} />
+                    <DataField fClass={'user__email'} data={"Електронная почта :"} value={email} />
                 </div>
                 <div className="user__right">
                     {userPhoto}

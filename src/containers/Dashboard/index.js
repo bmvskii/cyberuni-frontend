@@ -24,7 +24,7 @@ class Dashboard extends Component {
 
     render() {
         const { user } = this.props;
-
+        
         if (!this.state.isLoading && user) {
             return <Layout>
                 {

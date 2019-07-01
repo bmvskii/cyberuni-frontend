@@ -11,7 +11,6 @@ class AuthProvider extends Component {
         const { children, history, signIn } = this.props;
         const ACCESS_TOKEN = cookies.load(ACCESS_TOKEN_FIELD);
         const isHomepage = history.location.pathname === '/home';
-        const isLogin = history.location.pathname === '/login';
 
         if (ACCESS_TOKEN) {
             logIn();

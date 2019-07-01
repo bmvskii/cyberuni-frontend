@@ -33,7 +33,6 @@ const App = () => {
         exact
       />
 
-
       <Route
         path="/me/progress"
         render={() => <AuthProvider>{<StudyProgress />}</AuthProvider>}

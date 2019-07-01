@@ -13,30 +13,25 @@ const StudyProgress = ({ userInfo }) => {
 
     const { disciplines, finish_date, number, session_start, session_end } = semester[0];
 
-    let totalLectures = 0;
-    let totalLabs = 0;
-    let visitedLectures = 0;
-    let visitedLabs = 0;
-    let missedLectures = 0;
-    let missedLabs = 0;
+    let totalLectures = 0,
+        totalLabs = 0,
+        visitedLectures = 0,
+        visitedLabs = 0,
+        missedLectures = 0,
+        missedLabs = 0;
 
     disciplines.map(disc => totalLectures += disc.lectures);
     disciplines.map(disc => totalLabs += disc.laboratories);
 
-    learning_subjects.map(subj => {
-        visitedLectures += subj.visited_lectures
-    });
-
-    learning_subjects.map(subj => {
-        visitedLabs += subj.visited_laboratories
-    });
-
+    learning_subjects.map(subj => visitedLectures += subj.visited_lectures);
+    learning_subjects.map(subj => visitedLabs += subj.visited_laboratories);
     learning_subjects.map(subj => missedLectures += subj.missed_lectures);
     learning_subjects.map(subj => missedLabs += subj.missed_laboratories);
 
     let averageMark = 0;
     let totalMarksAmount = 0;
 
+    //Calculate an average mark from all subjects that student has
     learning_subjects.map(subj => {
         const sum = subj.marks.reduce((total, currVal) => total + currVal);
 
@@ -45,8 +40,6 @@ const StudyProgress = ({ userInfo }) => {
             totalMarksAmount += subj.marks.length;
         }
     });
-
-    
 
     return (
         <div className="progress container">

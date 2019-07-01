@@ -8,15 +8,16 @@ export const fetchMyInfo = () => async (dispatch) => {
         const info = await api.getInfoAboutMe();
         const semester = await api.getMySemester();
 
-        dispatch({
-            type: FETCH_USER_INFO_SUCCESS,
-            payload: {
-                ...info,
-                semester,
-            }
-        })
-
-        return info;
+        if (info && semester) {
+           dispatch({
+                type: FETCH_USER_INFO_SUCCESS,
+                payload: {
+                    ...info,
+                    semester,
+                }
+            })
+            return info;
+        } 
     } catch (e) {
         dispatch({
             type: FETCH_USER_INFO_ERROR,

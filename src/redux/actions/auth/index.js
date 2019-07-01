@@ -12,8 +12,6 @@ export const auth = (history) => async dispatch => {
     dispatch({ type: LOGIN_START });
     try {
         const info = await api.getInfoAboutMe();
-        debugger;
-
         if (info) {
             dispatch(logIn());
             history.push('/');
@@ -31,10 +29,8 @@ export const signIn = (email, password, history) => async dispatch => {
 
     try {
         const isLogged = await api.logIn(email, password);
-        if (isLogged) {
-            dispatch(logIn());
-            history.push('/');
-        }
+        dispatch(logIn());
+        history.push('/');
     } catch (e) {
         dispatch({
             type: LOGIN_ERROR,

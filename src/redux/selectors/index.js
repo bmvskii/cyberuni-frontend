@@ -7,11 +7,10 @@ export const getLoggedInStatus = state => state.authReducer.isLoggedIn;
 export const getTeachers = state => state.teachersReducer.teachers
 
 export const getTeacherById = (state, id) => {
-
     if (state.teachersReducer.teachers) {
         const teachers = state.teachersReducer.teachers;
 
-        if (!teachers) {
+        if (teachers.length < 1) {
             return null;
         }
 
@@ -31,7 +30,7 @@ export const getStudentById = (state, id) => {
     return _.find(students, (student => student._id === id)) || [];
 }
 
-export const getUserInfo = state => state.userInfoReducer.userInfo
+export const getUserInfo = state => state.userInfoReducer.userInfo;
 
 export const getUserEmailAndName = state => {
     if (state.userInfoReducer.userInfo) {
